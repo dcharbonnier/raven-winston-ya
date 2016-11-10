@@ -1,0 +1,36 @@
+{
+  "name": "raven-winston-ya",
+  "version": "1.0.0",
+  "description": "Yet another raven transport for winston",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "./node_modules/typescript/bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcharbonnier/raven-winston-ya.git"
+  },
+  "engines" : { "node" : ">=7.0.0" },
+  "keywords": [
+    "raven",
+    "winston",
+    "sentry",
+    "typescript",
+    "es6"
+  ],
+  "author": "David Charbonnier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcharbonnier/raven-winston-ya/issues"
+  },
+  "homepage": "https://github.com/dcharbonnier/raven-winston-ya#readme",
+  "dependencies": {
+    "@types/winston": "0.0.29",
+    "raven": "^0.12.1",
+    "winston": "^2.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.8"
+  }
+}
