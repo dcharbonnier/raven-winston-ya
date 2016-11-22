@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/dcharbonnier/raven-winston-ya#readme",
   "dependencies": {
-    "@types/winston": "0.0.29",
+    "@types/winston": "0.0.31",
     "raven": "^0.12.1",
     "winston": "^2.3.0"
   },
   "devDependencies": {
-    "typescript": "^2.0.8"
+    "typescript": "^2.1.0"
   }
 }

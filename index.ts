@@ -7,7 +7,7 @@ declare class RavenClient {
     on: (event: "error", handler: (error: Error) => void) => void;
 }
 
-import {Transport} from "winston";
+import {Transport, TransportInstance} from "winston";
 
 
 type RavenLevel = "debug" | "info" | "warning" | "error";
@@ -20,7 +20,7 @@ export interface Options {
     patchGlobal?: boolean;
 }
 
-export class Raven extends Transport {
+export class Raven extends Transport implements TransportInstance {
 
     static get name(): string {
         return "raven";
@@ -63,6 +63,11 @@ export class Raven extends Transport {
     }
 
     log(level: string, msg: Error|any, meta: any = {}, callback: (error: Error, success: boolean)=>void) {
+
+        if (this.silent) {
+            return callback(null, true);
+        }
+
         if (meta instanceof Error && msg === "") {
             msg = meta;
             meta = {};

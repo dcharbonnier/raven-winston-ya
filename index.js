@@ -29,6 +29,9 @@ class Raven extends winston_1.Transport {
         return "raven";
     }
     log(level, msg, meta = {}, callback) {
+        if (this.silent) {
+            return callback(null, true);
+        }
         if (meta instanceof Error && msg === "") {
             msg = meta;
             meta = {};
@@ -74,8 +77,8 @@ class Raven extends winston_1.Transport {
         }
     }
 }
+exports.Raven = Raven;
 Raven.RAVEN_PROCESS_ATTRIBUTES = new Set(["extra", "tags", "fingerprint",
     "level", "culprit", "request", "server_name", "environment", "logger",
     "user"
 ]);
-exports.Raven = Raven;
