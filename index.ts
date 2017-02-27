@@ -22,10 +22,6 @@ export interface Options {
 
 export class Raven extends Transport implements TransportInstance {
 
-    static get name(): string {
-        return "raven";
-    }
-
     static readonly RAVEN_PROCESS_ATTRIBUTES = new Set(["extra", "tags", "fingerprint",
     "level", "culprit", "request", "server_name", "environment", "logger",
     "user"
